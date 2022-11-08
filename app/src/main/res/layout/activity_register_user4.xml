@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".RegisterUser4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Payment Info"
+        android:textSize="32sp"
+        android:layout_marginBottom="50sp"/>
+
+    <EditText
+        android:id="@+id/txt_register_creditcard"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Credit Card Number"
+        android:maxLines="1"
+        android:maxLength="16"
+        android:inputType="number"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <EditText
+            android:id="@+id/txt_register_carddate"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:hint="Expirary Date"
+            android:maxLines="1"
+            android:inputType="number"
+            android:maxLength="4"
+            />
+
+        <EditText
+            android:id="@+id/txt_register_cardccv"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:hint="CCV"
+            android:maxLines="1"
+            android:inputType="number"
+            android:maxLength="4"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="50sp"
+        >
+
+        <Button
+            android:id="@+id/btn_register4_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:layout_marginRight="50sp"/>
+
+        <Button
+            android:id="@+id/btn_register4_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm"/>
+    </LinearLayout>
+
+</LinearLayout>

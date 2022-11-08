@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:text="Fresh Socks!"
+        android:textSize="32sp" />
+
+    <ImageView
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        android:layout_marginTop="25sp"
+        android:src="@drawable/socks" />
+
+
+    <EditText
+        android:id="@+id/txt_login_email"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25sp"
+        android:hint="Enter Email" />
+
+    <EditText
+        android:id="@+id/txt_login_password"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Password" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/check_login_show_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Password" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_login_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50sp"
+            android:text="LOGIN" />
+
+        <Button
+            android:id="@+id/btn_login_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTER" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/testaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test address"/>
+
+
+</LinearLayout>
