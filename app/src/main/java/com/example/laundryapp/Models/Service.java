@@ -7,13 +7,13 @@ public class Service {
     private String serviceID;
     private String serviceName;
     private String loadSize;
-    private BigDecimal cost;
+    private Double cost;
 
     public Service(){
 
     }
 
-    public Service(String serviceID, String serviceName, String loadSize, BigDecimal cost) {
+    public Service(String serviceID, String serviceName, String loadSize, Double cost) {
         this.serviceID = serviceID;
         this.serviceName = serviceName;
         this.loadSize = loadSize;
@@ -44,11 +44,11 @@ public class Service {
         this.loadSize = loadSize;
     }
 
-    public BigDecimal getCost() {
+    public Double getCost() {
         return cost;
     }
 
-    public void setCost(BigDecimal cost) {
+    public void setCost(Double cost) {
         this.cost = cost;
     }
 }

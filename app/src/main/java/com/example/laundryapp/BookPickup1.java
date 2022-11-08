@@ -1,11 +1,20 @@
 package com.example.laundryapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.laundryapp.Models.Cart;
 import com.example.laundryapp.Models.Service;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -13,7 +22,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class BookPickup1 extends AppCompatActivity {
+import java.util.List;
+
+public class BookPickup1 extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
     private FirebaseDatabase database;
@@ -21,6 +32,8 @@ public class BookPickup1 extends AppCompatActivity {
     private RecyclerView recyclerView;
     private String userID;
     ServiceList_Adapter serviceAdapter;
+    private Button cart;
+
 
 
     @Override
@@ -39,16 +52,41 @@ public class BookPickup1 extends AppCompatActivity {
         recyclerView = findViewById(R.id.rv_services);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<Service> options = new FirebaseRecyclerOptions
-                .Builder<Service>().
-                setQuery(FirebaseDatabase.getInstance()
-                        .getReference().child("Services"), Service.class).build();
+        cart = (Button) findViewById(R.id.btn_bookpickup_viewCart);
+        cart.setOnClickListener(this);
+        startAdapter();
 
-        serviceAdapter = new ServiceList_Adapter(options);
+
+    }
+
+
+
+    private void startAdapter() {
+        FirebaseRecyclerOptions<Service> options = new FirebaseRecyclerOptions.Builder<Service>().setQuery(FirebaseDatabase.getInstance().getReference().child("Services"), Service.class).build();
+
+        serviceAdapter = new ServiceList_Adapter(options, this);
         recyclerView.setAdapter(serviceAdapter);
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        serviceAdapter.startListening();
+    }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        serviceAdapter.stopListening();
+    }
 
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == cart.getId()) {
+            Intent intent = new Intent(this, ViewCart.class);
+            startActivity(intent);
+
+        }
 
     }
 }

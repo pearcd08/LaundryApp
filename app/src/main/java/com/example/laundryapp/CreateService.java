@@ -56,14 +56,14 @@ public class CreateService extends AppCompatActivity implements View.OnClickList
     private void saveService() {
         String name = et_name.getText().toString();
         String load = et_load.getText().toString();
-        String priceString = et_name.getText().toString();
-        BigDecimal priceBD = new BigDecimal(priceString);
+        String priceString = et_price.getText().toString();
+        Double priceDouble = Double.parseDouble(priceString);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference serviceRef = database.getReference("Services");
         String serviceID = serviceRef.push().getKey();
 
-        Service service = new Service(serviceID, name, load, priceBD);
+        Service service = new Service(serviceID, name, load, priceDouble);
         serviceRef.child(serviceID).setValue(service);
 
         Toast.makeText(this, "Service Added", Toast.LENGTH_SHORT).show();

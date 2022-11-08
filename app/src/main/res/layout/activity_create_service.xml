@@ -28,7 +28,7 @@
         android:layout_width="300sp"
         android:layout_height="wrap_content"
         android:hint="Enter Load Size"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:maxLines="1"/>
 
     <EditText
