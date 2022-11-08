@@ -42,5 +42,10 @@
             android:text="TIME"/>
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_services"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 
 </LinearLayout>
