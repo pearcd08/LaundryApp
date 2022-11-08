@@ -23,6 +23,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="DATE"/>
+
+        <Button
+            android:id="@+id/btn_bookpickup_viewCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CART"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -41,6 +48,11 @@
             android:layout_height="wrap_content"
             android:text="TIME"/>
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_services"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
 </LinearLayout>

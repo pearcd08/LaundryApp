@@ -24,7 +24,7 @@
         android:text="View Bookings"/>
 
     <Button
-        android:id="@+id/btn_employeehome_newBooking"
+        android:id="@+id/btn_employeehome_createservice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="new service"/>

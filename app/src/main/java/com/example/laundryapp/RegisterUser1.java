@@ -89,7 +89,7 @@ public class RegisterUser1 extends AppCompatActivity implements View.OnClickList
 
         }
         else{
-
+//hello
             fAuth.createUserWithEmailAndPassword(email, password2).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {

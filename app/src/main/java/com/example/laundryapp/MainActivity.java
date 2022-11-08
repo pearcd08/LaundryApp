@@ -59,6 +59,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String email = et_email.getText().toString();
         String password = et_password.getText().toString();
 
+        if(email.equals("admin")&&password.equals("admin")){
+            startActivity(new Intent(this, EmployeeHome.class));
+        }
+
         if (email.isEmpty()) {
             et_email.setError("Please enter Email");
             et_email.requestFocus();
